@@ -1,0 +1,22 @@
+back: 'Back'
+submit: 'Submit'
+edit: 'Edit'
+delete: 'Delete'
+options: 'Options'
+manage:
+    categories: 'Manage Categories'
+    products: 'Manage Products'
+no:
+    categories: 'No categories found'
+    products: 'No products found'
+add:
+    category: 'Add category'
+    product: 'Add product'
+product:
+    name: 'Product name'
+    description: 'Product description'
+    price: 'Product price'
+    category: 'Product Category'
+category:
+    name: 'Category name'
+

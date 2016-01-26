@@ -1,0 +1,21 @@
+{% extends 'admin/admin_panel.html.twig' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <a class="btn btn-default navbar-btn" href="{{ path('manage_categories') }}">{{ 'back'|trans }}</a>
+    </div>
+
+    <div class="row jumbotron">
+        {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_row(form.name) }}
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-default ">{{ 'Submit'|trans }}</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}

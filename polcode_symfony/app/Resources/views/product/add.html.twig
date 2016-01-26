@@ -1,0 +1,62 @@
+{% extends 'admin/admin_panel.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <a class="btn btn-default navbar-btn" href="{{ path('manage_products') }}">{{ 'back'|trans }}</a>
+        </div>
+
+        <div class="row jumbotron">
+            {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_row(form.name) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(form.description) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(form.price) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(form.category) }}
+            </div>
+
+            <div class="form-group">
+                    <button type="submit" class="btn btn-default ">{{ 'Submit'|trans }}</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+
+        {#<form class="form-horizontal" method="post">#}
+            {#<div class="form-group">#}
+                {#<label class="col-sm-2 control-label" for="product_name">{{ 'product.name'|trans }}</label>#}
+                {#<div class="col-sm-5">#}
+                    {#<input class="form-control" type="text" id="product_name" name="name"/>#}
+                {#</div>#}
+            {#</div>#}
+
+            {#<div class="form-group">#}
+                {#<label class="col-sm-2 control-label" for="product_description">{{ 'product.description'|trans }}</label>#}
+                {#<div class="col-sm-5">#}
+                    {#<input class="form-control" type="text" id="product_description" name="description"/>#}
+                {#</div>#}
+            {#</div>#}
+
+            {#<div class="form-group">#}
+                {#<label class="col-sm-2 control-label" for="product_price">{{ 'product.price'|trans }}</label>#}
+                {#<div class="col-sm-5">#}
+                    {#<input class="form-control" type="number" min="0" id="product_price" name="price"/>#}
+                {#</div>#}
+            {#</div>#}
+
+            {#<div class="form-group">#}
+                {#<div class="col-sm-offset-6 col-sm-6">#}
+                    {#<button type="submit" class="btn btn-default ">{{ 'Submit'|trans }}</button>#}
+                {#</div>#}
+            {#</div>#}
+        {#</form>#}
+    </div>
+{% endblock %}

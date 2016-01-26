@@ -1,0 +1,47 @@
+{% extends 'admin/admin_panel.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <a class="btn btn-default navbar-btn" href="{{ path('add_product') }}">{{ 'add.product'|trans }}</a>
+        </div>
+
+        <div class="jumbotron col-md-10">
+            {% if products is not empty %}
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>{{ 'product.name'|trans }}</th>
+                        <th>{{ 'product.description'|trans }}</th>
+                        <th>{{ 'product.category'|trans }}</th>
+                        <th>{{ 'product.price'|trans }}</th>
+                        <th>{{ 'options'|trans }}</th>
+                    </tr>
+                    </thead>
+                    {% for product in products %}
+                        <tr>
+                            <td>{{ product.id }}</td>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.description[:50] ~ '...'}}</td>
+                            <td>{{ product.category }}</td>
+                            <td>{{ product.price|number_format(2, '.', ',') }} $</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a href="{{ path('edit_product', {'id': product.id}) }}" class="btn btn-info btn-sm">
+                                        <span class="glyphicon glyphicon-edit"></span> {{ 'edit'|trans }}
+                                    </a>
+                                    <a href="{{ path('delete_product', {'id': product.id}) }}" class="btn btn-danger btn-sm">
+                                        <span class="glyphicon glyphicon-remove"></span> {{ 'delete'|trans }}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                {{ 'no.products'|trans }}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
